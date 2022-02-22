@@ -12,7 +12,7 @@ public class SpeedTest {
 
     public static void main(String[] args) {
         MyArray.isRepeat = true;
-        MyArray.isShuffle = false;
+        MyArray.isShuffle = true;
         final int SIZE = 65000;
         Integer[] arr = MyArray.getArray(SIZE, 3);
 
@@ -34,11 +34,11 @@ public class SpeedTest {
     }
 
     private static void allSort(Integer[] arr) {
-        MyArray.shuffleArray(arr);
-        printSortName("Быстрая сортировка");
-        startTime();
-        QuickSort.sort(arr);
-        endTime();
+//        MyArray.shuffleArray(arr);
+//        printSortName("Быстрая сортировка");
+//        startTime();
+//        //QuickSort.sort(arr);
+//        endTime();
 
         MyArray.shuffleArray(arr);
         printSortName("Сортировка встроенная");
