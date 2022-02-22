@@ -1,9 +1,8 @@
-package lesson2;
+package org.example.lesson2;
 
-import lesson2.sort.*;
+import org.example.lesson2.sort.InsertionSort;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package lesson2.search;
+package org.example.lesson2.search;
 
-public class BinarySearch {
+public class InterpolationSearch {
     public static int search(Integer[] arr, int num2Find) {
         return -1;
     }

@@ -1,4 +1,4 @@
-package lesson2.sort;
+package org.example.lesson2.sort;
 
 public class CombSort {
     public static <E extends Comparable<? super E>> void sort(E[] input) {

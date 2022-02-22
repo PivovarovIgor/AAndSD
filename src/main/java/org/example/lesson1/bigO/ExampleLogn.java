@@ -1,4 +1,4 @@
-package lesson1.bigO;
+package org.example.lesson1.bigO;
 
 public class ExampleLogn {
     public static void main(String[] args) {

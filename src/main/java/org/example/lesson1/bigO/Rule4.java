@@ -1,4 +1,4 @@
-package lesson1.bigO;
+package org.example.lesson1.bigO;
 
 public class Rule4 {
     public static boolean findDuplicates(int[] array) {

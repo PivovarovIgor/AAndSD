@@ -1,4 +1,4 @@
-package lesson2.sort;
+package org.example.lesson2.sort;
 
 public class CocktailSort {
     public static void sort( Integer[] A ){

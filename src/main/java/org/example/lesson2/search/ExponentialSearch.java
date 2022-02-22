@@ -1,4 +1,4 @@
-package lesson2.search;
+package org.example.lesson2.search;
 
 public class ExponentialSearch {
 

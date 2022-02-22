@@ -1,4 +1,4 @@
-package lesson2.sort;
+package org.example.lesson2.sort;
 
 import java.util.Arrays;
 import java.util.List;
