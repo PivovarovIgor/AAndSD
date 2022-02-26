@@ -1,10 +1,10 @@
-package lesson3;
+package org.example.lesson3;
 
 
-import lesson3.queue.Queue;
-import lesson3.queue.QueueImpl;
-import lesson3.stack.Stack;
-import lesson3.stack.StackImpl;
+import org.example.lesson3.queue.Queue;
+import org.example.lesson3.queue.QueueImpl;
+import org.example.lesson3.stack.Stack;
+import org.example.lesson3.stack.StackImpl;
 
 public class Test3 {
 

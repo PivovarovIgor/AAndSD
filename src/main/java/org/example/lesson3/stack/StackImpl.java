@@ -1,4 +1,4 @@
-package lesson3.stack;
+package org.example.lesson3.stack;
 
 public class StackImpl<E> implements Stack<E> {
 

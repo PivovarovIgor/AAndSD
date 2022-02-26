@@ -1,4 +1,4 @@
-package lesson3.queue;
+package org.example.lesson3.queue;
 
 public class QueueImpl <E> implements Queue<E> {
 
