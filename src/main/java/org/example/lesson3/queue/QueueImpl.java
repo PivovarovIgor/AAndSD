@@ -1,6 +1,10 @@
 package org.example.lesson3.queue;
 
-public class QueueImpl <E> implements Queue<E> {
+/*
+(дополнительно). 2. Закольцевать очередь, чтобы после извлечения элементов пустые ячейки переиспользовались
+*/
+
+public class QueueImpl<E> implements Queue<E> {
 
     protected final int DEFAULT_TAIL = -1;
     protected final int DEFAULT_HEAD = 0;
@@ -22,8 +26,9 @@ public class QueueImpl <E> implements Queue<E> {
             return false;
         }
 
-        //организовать закольцовывание
-
+        if (tail == data.length - 1) {
+            tail = -1;
+        }
         data[++tail] = value;
         size++;
         return true;
@@ -35,10 +40,10 @@ public class QueueImpl <E> implements Queue<E> {
             return null;
         }
 
-        //закольцовывание
-
         E value = data[head++];
-//        data[head] = null;
+        if (head == data.length) {
+            head = 0;
+        }
         size--;
         return value;
     }
@@ -71,9 +76,12 @@ public class QueueImpl <E> implements Queue<E> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
-        for (int i = head; i <= tail; i++) {
-            sb.append(data[i]);
-            if (i != tail) {
+        for (int i = 0, j = head; i < size; i++, j++) {
+            if (j == data.length) {
+                j = 0;
+            }
+            sb.append(data[j]);
+            if (j != tail) {
                 sb.append(", ");
             }
         }
