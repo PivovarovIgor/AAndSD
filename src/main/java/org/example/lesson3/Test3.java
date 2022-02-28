@@ -44,8 +44,17 @@ public class Test3 {
 
         queue.display();
         System.out.println("remove: " + queue.remove());
+        System.out.println("remove: " + queue.remove());
         queue.display();
 
+        System.out.println("add element: " + queue.insert(50));
+        System.out.println("add element: " + queue.insert(56));
+        System.out.println("add element: " + queue.insert(66));
+        queue.display();
+        System.out.println("remove: " + queue.remove());
+        queue.display();
+        System.out.println("add element: " + queue.insert(66));
+        queue.display();
     }
 
 }
