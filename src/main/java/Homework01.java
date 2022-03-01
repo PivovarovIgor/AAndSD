@@ -35,10 +35,10 @@ public class Homework01 {
     }
 
     public static BigInteger fib(BigInteger n) {
-        if (n.equals(BigInteger.ONE) || n.equals(BigInteger.TWO)) {
+        if (n.equals(BigInteger.ONE) || n.equals(BigInteger.valueOf(2))) {
             return n;
         }
-        return fib(n.subtract(BigInteger.ONE)).add(fib(n.subtract(BigInteger.TWO)));
+        return fib(n.subtract(BigInteger.ONE)).add(fib(n.subtract(BigInteger.valueOf(2))));
     }
 
     public static BigInteger factorial(BigInteger n) {
