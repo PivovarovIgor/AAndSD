@@ -77,7 +77,6 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
     }
 
 
-
     @Override
     public int size() {
         return size;
@@ -114,12 +113,27 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
         return first.item;
     }
 
+//    2. Реализовать итератор
+
     @Override
     public Iterator<E> iterator() {
-        return null/*new ListIterator<>()*/;
+        return new ListIterator();
     }
 
-    private class ListIterator<E> /*implements Iterator<E>*/ {
+    private class ListIterator implements Iterator<E> {
 
+        private Node<E> current = first;
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public E next() {
+            E item = current.item;
+            current = current.next;
+            return item;
+        }
     }
 }
