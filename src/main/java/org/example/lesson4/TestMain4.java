@@ -46,13 +46,18 @@ public class TestMain4 {
         //ДОЛЖНО РАБОТАТЬ!
 
         SimpleLinkedListImpl<Integer> linkedList = new SimpleLinkedListImpl<>();
-        linkedList.insertFirst(1);
-        linkedList.insertFirst(2);
-        linkedList.insertFirst(3);
-        linkedList.insertFirst(4);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
         for (Integer value : linkedList) {
             System.out.println("value: " + value);
         }
+        linkedList.display();
+        linkedList.insert(5, 1);
+        linkedList.display();
+        linkedList.insert(6, 6);
+        linkedList.display();
     }
 
 

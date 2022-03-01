@@ -4,6 +4,10 @@ public interface LinkedList<E>  {
 
     void insertFirst(E value);
 
+    boolean insert(E value, int intoIndex);
+
+    boolean add(E value);
+
     E removeFirst();
 
     boolean remove(E value);
