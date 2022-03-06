@@ -16,6 +16,35 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
         size++;
     }
 
+    //3. Реализовать метод insert в классе списка
+    @Override
+    public boolean insert(E value, int intoIndex) {
+        if (intoIndex == 0) {
+            insertFirst(value);
+            return true;
+        }
+        if (intoIndex > size) {
+            return false;
+        }
+        Node<E> current = first;
+        Node<E> previous = null;
+        for (int i = 1; i <= intoIndex; i++) {
+            previous = current;
+            current = current.next;
+        }
+        Node<E> newNode = new Node<>(value, current);
+        if (previous != null) {
+            previous.next = newNode;
+        }
+        size++;
+        return true;
+    }
+
+    @Override
+    public boolean add(E value) {
+        return insert(value, size);
+    }
+
     @Override
     public E removeFirst() {
         if (isEmpty()) {
@@ -77,7 +106,6 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
     }
 
 
-
     @Override
     public int size() {
         return size;
@@ -114,12 +142,27 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
         return first.item;
     }
 
+//    2. Реализовать итератор
+
     @Override
     public Iterator<E> iterator() {
-        return null/*new ListIterator<>()*/;
+        return new ListIterator();
     }
 
-    private class ListIterator<E> /*implements Iterator<E>*/ {
+    private class ListIterator implements Iterator<E> {
 
+        private Node<E> current = first;
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public E next() {
+            E item = current.item;
+            current = current.next;
+            return item;
+        }
     }
 }

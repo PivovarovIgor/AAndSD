@@ -7,8 +7,8 @@ public class TestMain4 {
 
     public static void main(String[] args) {
 //        testLinkedList();
-//        testHomeWork();
-        testIterator();
+        testHomeWork();
+        //testIterator();
     }
 
     private static void testLinkedList() {
@@ -46,10 +46,18 @@ public class TestMain4 {
         //ДОЛЖНО РАБОТАТЬ!
 
         SimpleLinkedListImpl<Integer> linkedList = new SimpleLinkedListImpl<>();
-
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
         for (Integer value : linkedList) {
             System.out.println("value: " + value);
         }
+        linkedList.display();
+        linkedList.insert(5, 1);
+        linkedList.display();
+        linkedList.insert(6, 6);
+        linkedList.display();
     }
 
 
@@ -57,9 +65,9 @@ public class TestMain4 {
         java.util.List<Integer> linkedList = new java.util.LinkedList<>();
         Collections.addAll(linkedList, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 
-/*        for (Integer integer : linkedList) {
+        for (Integer integer : linkedList) {
             System.out.println(integer);
-        }*/
+        }
         ListIterator<Integer> iterator = linkedList.listIterator();
         //first:reset
         while (iterator.hasNext()) {
