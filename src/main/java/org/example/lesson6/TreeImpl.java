@@ -2,7 +2,7 @@ package org.example.lesson6;
 
 import java.util.Stack;
 
-public class TreeImpl<E extends Comparable<? super E>> implements Tree<E>{
+public class TreeImpl<E extends Comparable<? super E>> implements Tree<E> {
 
     private Node<E> root;
     private int size;
@@ -106,8 +106,8 @@ public class TreeImpl<E extends Comparable<? super E>> implements Tree<E>{
 
     private void removeNodeWithOneChild(Node<E> removed, Node<E> parent) {
         Node<E> child = removed.getLeftChild() != null
-                        ? removed.getLeftChild()
-                        : removed.getRightChild();
+                ? removed.getLeftChild()
+                : removed.getRightChild();
 
         if (removed.isLeftChild(child.getValue())) {
             removed.setLeftChild(null);
@@ -220,6 +220,22 @@ public class TreeImpl<E extends Comparable<? super E>> implements Tree<E>{
             case POST_ORDER -> postOrder(root); //обратный
         }
         System.out.println();
+    }
+
+    @Override
+    public Boolean isBalanced() {
+        return isBalanced(root);
+    }
+
+    private Boolean isBalanced(Node<E> node) {
+        return (node == null)
+                || isBalanced(node.getLeftChild())
+                && isBalanced(node.getRightChild())
+                && Math.abs(height(node.getLeftChild())) - height(node.getRightChild()) <= 1;
+    }
+
+    private int height(Node<E> node) {
+        return node == null ? 0 : 1 + Math.max(height(node.getLeftChild()), height(node.getRightChild()));
     }
 
     private void preOrder(Node<E> current) {
