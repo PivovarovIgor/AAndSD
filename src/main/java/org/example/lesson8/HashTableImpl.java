@@ -128,7 +128,7 @@ public class HashTableImpl <K, V> implements HashTable<K, V> {
 
         Item<K, V> removed = data[index];
         data[index] = emptyItem;
-
+        size--;
         return removed.getValue();
     }
 
